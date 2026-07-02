@@ -4,11 +4,11 @@
   border-radius: 5px;
   background-color: var(--primary);
   color: var(--white);
-  border: none;
+  border: 2px solid var(--primary);
 }
 
 .secondary {
   background-color: var(--white);
-  border: 2px solid var(--black);
+  border-color: var(--black);
   color: var(--black);
 }
