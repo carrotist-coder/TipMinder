@@ -7,3 +7,23 @@
   border: 2px solid var(--border);
   font-family: Montserrat, sans-serif;
 }
+
+.select {
+  appearance: none;
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text);
+  width: 24px;
+  height: 24px;
+}
