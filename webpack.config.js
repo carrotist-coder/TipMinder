@@ -12,6 +12,15 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src/'),
+      '@app': path.resolve(__dirname, 'src/app/'),
+      '@pages': path.resolve(__dirname, 'src/pages/'),
+      '@widgets': path.resolve(__dirname, 'src/widgets/'),
+      '@features': path.resolve(__dirname, 'src/features/'),
+      '@entities': path.resolve(__dirname, 'src/entities/'),
+      '@shared': path.resolve(__dirname, 'src/shared/'),
+    },
     extensions: ['.js', '.jsx'],
   },
   module: {
@@ -23,7 +32,21 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              esModule: false,
+              modules: {
+                auto: true,
+                namedExport: false,
+                exportLocalsConvention: 'asIs',
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
+            },
+          },
+        ],
       },
     ],
   },
