@@ -21,6 +21,9 @@ export const App = () => {
         onChange={(index) => setOption(index)}
       />
       <StatusBadge />
+      <Button iconHref={'/assets/icons/logout-circle.svg'}></Button>
+      <Button iconHref={'/assets/icons/lock-fill.svg'}></Button>
+      <Button iconHref={'/assets/icons/user-icon.svg'}>Log out</Button>
     </>
   );
 };

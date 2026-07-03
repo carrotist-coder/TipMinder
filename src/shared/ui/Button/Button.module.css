@@ -13,3 +13,42 @@
   border-color: var(--black);
   color: var(--black);
 }
+
+.icon-button {
+  width: 28px;
+  height: 28px;
+  background: var(--gradient);
+  border: 1px solid var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.icon-text-button {
+  background: var(--gradient);
+  border: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  padding: 0 16px 0 0;
+  gap: 12px;
+  border-radius: 10px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #ffdac5;
+  padding: 11px 12px;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-wrapper .icon {
+  width: 24px;
+  height: 24px;
+}
