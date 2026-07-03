@@ -11,6 +11,7 @@ import { Table } from '@shared/ui/Table/Table';
 import { HeaderCell } from '@shared/ui/Table/HeaderCell';
 import { Row } from '@shared/ui/Table/Row';
 import { CardRow, mockCards } from '@entities/card';
+import { LockCardButton } from '@features/card/LockCard';
 
 export const App = () => {
   // Test
@@ -29,6 +30,8 @@ export const App = () => {
       <StatusBadge />
       <Button iconHref={'/assets/icons/user-icon.svg'}>Log out</Button>
       <TextLink>Edit Profile</TextLink>
+
+      <LockCardButton id={1}></LockCardButton>
 
       <Table columnsCount={5}>
         <thead>
