@@ -1,0 +1,25 @@
+.segment {
+  padding: 8px 20px;
+  border: 1px solid var(--border-alt);
+  color: var(--text);
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.segment:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.segment:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.segment:not(:last-child) {
+  border-right: none;
+}
+
+.active {
+  background: var(--primary);
+  color: var(--white);
+}
