@@ -4,6 +4,7 @@ import { Input } from '@shared/ui/Input';
 import { Dropdown } from '@shared/ui/Dropdown';
 import { SegmentedControl } from '@shared/ui/SegmentedControl';
 import { useState } from 'react';
+import { StatusBadge } from '@shared/ui/StatusBadge';
 
 export const App = () => {
   // Test
@@ -19,6 +20,7 @@ export const App = () => {
         activeIndex={option}
         onChange={(index) => setOption(index)}
       />
+      <StatusBadge />
     </>
   );
 };

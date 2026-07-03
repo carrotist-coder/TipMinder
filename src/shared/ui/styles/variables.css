@@ -1,8 +1,19 @@
 :root {
+  /* Global */
   --primary: #fb8f42;
   --white: #ffffff;
   --black: #474747;
   --text: #565656;
   --border-alt: #c0c0c0;
   --border: #d5d5d5;
+
+  /* Status Badges */
+  --error-bg: #fbecee;
+  --error-cl: #da3e52;
+  --active-bg: #ecf8f7;
+  --active-cl: #048a81;
+  --expired-bg: #f4ecfb;
+  --expired-cl: #d73eda;
+  --suspended-bg: #f3f8ec;
+  --suspended-cl: #5f8a04;
 }
