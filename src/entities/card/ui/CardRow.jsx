@@ -10,11 +10,7 @@ export const CardRow = ({ card, actions }) => {
         <StatusBadge status={card.status} />
       </Cell>
       <Cell>{card.validTill}</Cell>
-      <Cell>
-        {actions}
-        {/*<Button iconHref={'/assets/icons/logout-circle.svg'}></Button>*/}
-        {/*<Button iconHref={'/assets/icons/lock-fill.svg'}></Button>*/}
-      </Cell>
+      <Cell>{actions}</Cell>
     </Row>
   );
 };

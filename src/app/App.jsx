@@ -12,6 +12,7 @@ import { HeaderCell } from '@shared/ui/Table/HeaderCell';
 import { Row } from '@shared/ui/Table/Row';
 import { CardRow, mockCards } from '@entities/card';
 import { LockCardButton } from '@features/card/LockCard';
+import { LogoutCardButton } from '@features/card/LogoutCard';
 
 export const App = () => {
   // Test
@@ -32,6 +33,7 @@ export const App = () => {
       <TextLink>Edit Profile</TextLink>
 
       <LockCardButton id={1}></LockCardButton>
+      <LogoutCardButton id={2}></LogoutCardButton>
 
       <Table columnsCount={5}>
         <thead>
