@@ -7,12 +7,7 @@ import { useState } from 'react';
 import { StatusBadge } from '@shared/ui/StatusBadge';
 import { TextLink } from '@shared/ui/TextLink';
 import { BrowserRouter } from 'react-router-dom';
-import { Table } from '@shared/ui/Table/Table';
-import { HeaderCell } from '@shared/ui/Table/HeaderCell';
-import { Row } from '@shared/ui/Table/Row';
-import { CardRow, mockCards } from '@entities/card';
-import { LockCardButton } from '@features/card/LockCard';
-import { LogoutCardButton } from '@features/card/LogoutCard';
+import { CardsTable } from '@widgets/CardsTable/CardsTable';
 
 export const App = () => {
   // Test
@@ -32,25 +27,7 @@ export const App = () => {
       <Button iconHref={'/assets/icons/user-icon.svg'}>Log out</Button>
       <TextLink>Edit Profile</TextLink>
 
-      <LockCardButton id={1}></LockCardButton>
-      <LogoutCardButton id={2}></LogoutCardButton>
-
-      <Table columnsCount={5}>
-        <thead>
-          <Row>
-            <HeaderCell>Number</HeaderCell>
-            <HeaderCell>Card number</HeaderCell>
-            <HeaderCell>Status</HeaderCell>
-            <HeaderCell>Valid till</HeaderCell>
-            <HeaderCell>Action</HeaderCell>
-          </Row>
-        </thead>
-        <tbody>
-          {mockCards.map((card) => (
-            <CardRow key={card.id} card={card} />
-          ))}
-        </tbody>
-      </Table>
+      <CardsTable />
     </BrowserRouter>
   );
 };
