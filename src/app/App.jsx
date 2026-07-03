@@ -5,12 +5,14 @@ import { Dropdown } from '@shared/ui/Dropdown';
 import { SegmentedControl } from '@shared/ui/SegmentedControl';
 import { useState } from 'react';
 import { StatusBadge } from '@shared/ui/StatusBadge';
+import { TextLink } from '@shared/ui/TextLink';
+import { BrowserRouter } from 'react-router-dom';
 
 export const App = () => {
   // Test
   const [option, setOption] = useState(0);
   return (
-    <>
+    <BrowserRouter>
       <Button>Sign contract</Button>
       <Button type="secondary">Back</Button>
       <Input />
@@ -24,6 +26,7 @@ export const App = () => {
       <Button iconHref={'/assets/icons/logout-circle.svg'}></Button>
       <Button iconHref={'/assets/icons/lock-fill.svg'}></Button>
       <Button iconHref={'/assets/icons/user-icon.svg'}>Log out</Button>
-    </>
+      <TextLink>Edit Profile</TextLink>
+    </BrowserRouter>
   );
 };
