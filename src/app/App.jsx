@@ -7,6 +7,10 @@ import { useState } from 'react';
 import { StatusBadge } from '@shared/ui/StatusBadge';
 import { TextLink } from '@shared/ui/TextLink';
 import { BrowserRouter } from 'react-router-dom';
+import { Table } from '@shared/ui/Table/Table';
+import { HeaderCell } from '@shared/ui/Table/HeaderCell';
+import { Cell } from '@shared/ui/Table/Cell';
+import { Row } from '@shared/ui/Table/Row';
 
 export const App = () => {
   // Test
@@ -23,10 +27,34 @@ export const App = () => {
         onChange={(index) => setOption(index)}
       />
       <StatusBadge />
-      <Button iconHref={'/assets/icons/logout-circle.svg'}></Button>
-      <Button iconHref={'/assets/icons/lock-fill.svg'}></Button>
       <Button iconHref={'/assets/icons/user-icon.svg'}>Log out</Button>
       <TextLink>Edit Profile</TextLink>
+
+      <Table columnsCount={5}>
+        <thead>
+          <Row>
+            <HeaderCell>Number</HeaderCell>
+            <HeaderCell>Card number</HeaderCell>
+            <HeaderCell>Status</HeaderCell>
+            <HeaderCell>Valid till</HeaderCell>
+            <HeaderCell>Action</HeaderCell>
+          </Row>
+        </thead>
+        <tbody>
+          <Row>
+            <Cell>1</Cell>
+            <Cell>3445 6464 7885 3321</Cell>
+            <Cell>
+              <StatusBadge status={'active'} />
+            </Cell>
+            <Cell>12/10/2023</Cell>
+            <Cell>
+              <Button iconHref={'/assets/icons/logout-circle.svg'}></Button>
+              <Button iconHref={'/assets/icons/lock-fill.svg'}></Button>
+            </Cell>
+          </Row>
+        </tbody>
+      </Table>
     </BrowserRouter>
   );
 };

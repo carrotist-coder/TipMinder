@@ -26,4 +26,10 @@
   --expired-cl: #d73eda;
   --suspended-bg: #f3f8ec;
   --suspended-cl: #5f8a04;
+
+  /* Tables */
+  --header-bg: #fff9f9;
+  --row-bg: var(--white);
+  --even-row-bg: #f9f9f9;
+  --columns-count: 5; /* Dynamic value */
 }

@@ -6,6 +6,7 @@
   border-radius: 25px;
   cursor: pointer;
   text-transform: capitalize;
+  font-weight: 500;
 }
 
 .error {
