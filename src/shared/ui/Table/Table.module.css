@@ -7,7 +7,6 @@
 
 .table thead .row {
   background-color: var(--header-bg);
-  font-weight: 500;
   border-bottom: 1px solid var(--border-alt);
 }
 
@@ -39,4 +38,8 @@
 .td {
   display: flex;
   gap: 12px;
+}
+
+.th {
+  font-weight: 500;
 }

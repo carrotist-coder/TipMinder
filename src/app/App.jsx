@@ -9,8 +9,8 @@ import { TextLink } from '@shared/ui/TextLink';
 import { BrowserRouter } from 'react-router-dom';
 import { Table } from '@shared/ui/Table/Table';
 import { HeaderCell } from '@shared/ui/Table/HeaderCell';
-import { Cell } from '@shared/ui/Table/Cell';
 import { Row } from '@shared/ui/Table/Row';
+import { CardRow, mockCards } from '@entities/card';
 
 export const App = () => {
   // Test
@@ -41,18 +41,9 @@ export const App = () => {
           </Row>
         </thead>
         <tbody>
-          <Row>
-            <Cell>1</Cell>
-            <Cell>3445 6464 7885 3321</Cell>
-            <Cell>
-              <StatusBadge status={'active'} />
-            </Cell>
-            <Cell>12/10/2023</Cell>
-            <Cell>
-              <Button iconHref={'/assets/icons/logout-circle.svg'}></Button>
-              <Button iconHref={'/assets/icons/lock-fill.svg'}></Button>
-            </Cell>
-          </Row>
+          {mockCards.map((card) => (
+            <CardRow key={card.id} card={card} />
+          ))}
         </tbody>
       </Table>
     </BrowserRouter>
