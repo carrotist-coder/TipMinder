@@ -21,8 +21,8 @@ export const CardsTable = () => {
             card={card}
             actions={
               <>
-                <LockCardButton id={card.number} />
                 <LogoutCardButton id={card.number} />
+                <LockCardButton id={card.number} />
               </>
             }
           />
