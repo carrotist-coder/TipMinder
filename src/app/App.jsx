@@ -10,12 +10,15 @@ import { BrowserRouter } from 'react-router-dom';
 import { CardsTable } from '@widgets/CardsTable/CardsTable';
 import { Heading } from '@shared/ui/Heading';
 import { Footer } from '@widgets/Footer/Footer';
+import { Logo } from '@shared/ui/Logo';
 
 export const App = () => {
   // Test
   const [option, setOption] = useState(0);
   return (
     <BrowserRouter>
+      <Logo />
+
       <Button>Sign contract</Button>
       <Button type="secondary">Back</Button>
       <Input />

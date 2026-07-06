@@ -1,0 +1,29 @@
+.logo {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  display: flex;
+  position: relative;
+  width: 22px;
+  height: 36px;
+}
+
+.oval {
+  position: absolute;
+  width: 14px;
+  height: 36px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  left: 8px;
+}
+
+.oval:first-child {
+  left: 0;
+  background-color: var(--secondary);
+}
