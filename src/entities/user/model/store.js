@@ -4,8 +4,10 @@ export const userModel = {
 
   login() {
     this.isAuth = true;
+    window.location.reload();
   },
   logout() {
     this.isAuth = false;
+    window.location.reload();
   },
 };

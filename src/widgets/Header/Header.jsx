@@ -1,7 +1,7 @@
 import styles from './Header.module.css';
 import { Logo } from '@shared/ui/Logo';
-import { Button } from '@shared/ui/Button';
 import { TextLink } from '@shared/ui/TextLink';
+import { LogoutButton } from '@features/auth/Logout';
 
 export const Header = () => {
   return (
@@ -24,7 +24,7 @@ export const Header = () => {
           Contacts
         </TextLink>
       </nav>
-      <Button iconHref={'/assets/icons/user-icon.svg'}>Log out</Button>
+      <LogoutButton />
     </header>
   );
 };
