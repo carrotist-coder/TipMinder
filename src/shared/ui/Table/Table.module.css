@@ -8,6 +8,7 @@
 .table thead .row {
   background-color: var(--header-bg);
   border-bottom: 1px solid var(--border-alt);
+  border-radius: 10px 10px 0 0;
 }
 
 .row {
@@ -26,6 +27,7 @@
 
 .row:last-child {
   border-bottom: none;
+  border-radius: 0 0 10px 10px;
 }
 
 .th,
