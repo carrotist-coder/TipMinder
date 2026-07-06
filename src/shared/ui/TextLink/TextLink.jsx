@@ -5,10 +5,12 @@ export const TextLink = ({
   children,
   href,
   iconHref = '/assets/icons/arrow-link.svg',
+  variant = '',
   ...props
 }) => {
+  const style = `${styles.link} ${styles[variant] ?? ''}`.trim();
   return (
-    <Link to={href} className={`${styles.link}`.trim()} {...props}>
+    <Link to={href} className={style} {...props}>
       {children}
       {iconHref && (
         <svg className={styles.icon}>
