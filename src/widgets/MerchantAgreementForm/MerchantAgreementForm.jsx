@@ -1,10 +1,18 @@
 import { Input } from '@shared/ui/Input';
 import { Dropdown } from '@shared/ui/Dropdown';
 import { Button } from '@shared/ui/Button';
+import { Form } from '@shared/ui/Form';
 
 export const MerchantAgreementForm = () => {
   return (
-    <form>
+    <Form
+      actions={
+        <>
+          <Button>Sign contract</Button>
+          <Button type="secondary">Back</Button>
+        </>
+      }
+    >
       <Dropdown label="Company name" name="companyName" />
       <Dropdown label="Terminal monthly fee" name="monthlyFee" />
       <Input
@@ -34,8 +42,6 @@ export const MerchantAgreementForm = () => {
         placeholder="Date from"
       />
       <Dropdown label="Contract number" name="contractNumber" />
-      <Button>Sign contract</Button>
-      <Button type="secondary">Back</Button>
-    </form>
+    </Form>
   );
 };
