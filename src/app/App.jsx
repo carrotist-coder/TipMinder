@@ -9,6 +9,7 @@ import { TextLink } from '@shared/ui/TextLink';
 import { BrowserRouter } from 'react-router-dom';
 import { CardsTable } from '@widgets/CardsTable/CardsTable';
 import { Heading } from '@shared/ui/Heading';
+import { Footer } from '@widgets/Footer/Footer';
 
 export const App = () => {
   // Test
@@ -30,6 +31,7 @@ export const App = () => {
 
       <Heading>Cards</Heading>
       <CardsTable />
+      <Footer />
     </BrowserRouter>
   );
 };
