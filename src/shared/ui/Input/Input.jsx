@@ -8,8 +8,12 @@ export const Input = ({
   ...props
 }) => {
   return (
-    <>
-      {label && <label htmlFor={id}>{label}</label>}
+    <div className={styles.inputGroup}>
+      {label && (
+        <label className={styles.label} htmlFor={id}>
+          {label}
+        </label>
+      )}
       <input
         className={styles.input}
         id={id}
@@ -17,6 +21,6 @@ export const Input = ({
         onSubmit={onSubmit}
         {...props}
       />
-    </>
+    </div>
   );
 };

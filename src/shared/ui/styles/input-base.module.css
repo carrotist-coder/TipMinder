@@ -27,3 +27,15 @@
   width: 24px;
   height: 24px;
 }
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat, sans-serif;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

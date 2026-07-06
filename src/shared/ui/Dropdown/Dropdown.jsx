@@ -8,8 +8,12 @@ export const Dropdown = ({
   ...props
 }) => {
   return (
-    <>
-      {label && <label htmlFor={id}>{label}</label>}
+    <div className={styles.inputGroup}>
+      {label && (
+        <label className={styles.label} htmlFor={id}>
+          {label}
+        </label>
+      )}
       <div className={styles.wrapper}>
         <select id={id} name={name} className={styles.select} {...props}>
           {options.map((option) => (
@@ -22,6 +26,6 @@ export const Dropdown = ({
           <use href="/assets/icons/arrow-dropdown.svg"></use>
         </svg>
       </div>
-    </>
+    </div>
   );
 };
