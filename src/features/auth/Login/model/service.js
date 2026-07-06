@@ -1,6 +1,7 @@
-import { userModel } from '@/entities/user';
+import { login } from '@entities/user/model/slice';
+import { store } from '@app/store/store';
 
-export const login = () => {
+export const handleLogin = () => {
   console.log('Login');
-  userModel.login();
+  store.dispatch(login());
 };

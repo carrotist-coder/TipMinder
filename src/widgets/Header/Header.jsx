@@ -2,8 +2,11 @@ import styles from './Header.module.css';
 import { Logo } from '@shared/ui/Logo';
 import { TextLink } from '@shared/ui/TextLink';
 import { LogoutButton } from '@features/auth/Logout';
+import { LoginButton } from '@features/auth/Login';
+import { useSelector } from 'react-redux';
 
 export const Header = () => {
+  const isAuth = useSelector((state) => state.user.isAuth);
   return (
     <header className={styles.header}>
       <Logo />
@@ -24,7 +27,7 @@ export const Header = () => {
           Contacts
         </TextLink>
       </nav>
-      <LogoutButton />
+      {isAuth ? <LogoutButton /> : <LoginButton />}
     </header>
   );
 };

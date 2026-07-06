@@ -1,9 +1,9 @@
 import { Button } from '@/shared/ui/Button';
-import { login } from '../model/service';
+import { handleLogin } from '@features/auth/Login/model/service';
 
 export const LoginButton = () => {
   return (
-    <Button iconHref="/assets/icons/user-icon.svg" onClick={login}>
+    <Button iconHref="/assets/icons/user-icon.svg" onClick={handleLogin}>
       Login
     </Button>
   );

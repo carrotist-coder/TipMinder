@@ -1,6 +1,7 @@
-import { userModel } from '@/entities/user';
+import { logout } from '@/entities/user/model/slice';
+import { store } from '@app/store/store';
 
-export const logout = () => {
+export const handleLogout = () => {
   console.log('Logout');
-  userModel.logout();
+  store.dispatch(logout());
 };
