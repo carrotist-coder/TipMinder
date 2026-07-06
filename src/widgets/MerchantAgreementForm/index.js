@@ -1,0 +1,1 @@
+export { MerchantAgreementForm } from './MerchantAgreementForm';
