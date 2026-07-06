@@ -8,6 +8,7 @@ import { StatusBadge } from '@shared/ui/StatusBadge';
 import { TextLink } from '@shared/ui/TextLink';
 import { BrowserRouter } from 'react-router-dom';
 import { CardsTable } from '@widgets/CardsTable/CardsTable';
+import { Heading } from '@shared/ui/Heading';
 
 export const App = () => {
   // Test
@@ -27,6 +28,7 @@ export const App = () => {
       <Button iconHref={'/assets/icons/user-icon.svg'}>Log out</Button>
       <TextLink>Edit Profile</TextLink>
 
+      <Heading>Cards</Heading>
       <CardsTable />
     </BrowserRouter>
   );
