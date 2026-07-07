@@ -5,14 +5,22 @@ import { SignContractButton } from '@features/merchant-agreement/SignContract/ui
 import { useDispatch, useSelector } from 'react-redux';
 import { updateField } from '@entities/merchant-agreement/model/slice';
 import { BackButton } from '@features/navigation/Back';
+import { useState } from 'react';
+import { merchantValidationMap } from '@entities/merchant-agreement/model/validation';
 
 export const MerchantAgreementForm = () => {
+  const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
   const formData = useSelector((state) => state.merchantAgreement);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     dispatch(updateField({ field: name, value }));
+
+    const validator = merchantValidationMap[name];
+    if (validator) {
+      setErrors((prev) => ({ ...prev, [name]: validator(value) }));
+    }
   };
 
   return (
@@ -29,12 +37,14 @@ export const MerchantAgreementForm = () => {
         name="companyName"
         value={formData.companyName}
         onChange={handleChange}
+        error={errors.companyName}
       />
       <Dropdown
         label="Terminal monthly fee"
         name="monthlyFee"
         value={formData.monthlyFee}
         onChange={handleChange}
+        error={errors.monthlyFee}
       />
       <Input
         type="number"
@@ -43,6 +53,7 @@ export const MerchantAgreementForm = () => {
         placeholder="Personal code"
         value={formData.personalCode}
         onChange={handleChange}
+        error={errors.personalCode}
       />
       <Input
         type="tel"
@@ -51,6 +62,7 @@ export const MerchantAgreementForm = () => {
         placeholder="Telephone number"
         value={formData.phoneNumber}
         onChange={handleChange}
+        error={errors.phoneNumber}
       />
       <Input
         type="text"
@@ -59,6 +71,7 @@ export const MerchantAgreementForm = () => {
         placeholder="Address"
         value={formData.address}
         onChange={handleChange}
+        error={errors.address}
       />
       <Input
         type="text"
@@ -67,6 +80,7 @@ export const MerchantAgreementForm = () => {
         placeholder="Bank account number"
         value={formData.bankAccount}
         onChange={handleChange}
+        error={errors.bankAccount}
       />
       <Input
         type="email"
@@ -75,6 +89,7 @@ export const MerchantAgreementForm = () => {
         placeholder="Email"
         value={formData.email}
         onChange={handleChange}
+        error={errors.email}
       />
       <Input
         type="date"
@@ -83,12 +98,14 @@ export const MerchantAgreementForm = () => {
         placeholder="Date from"
         value={formData.dateFrom}
         onChange={handleChange}
+        error={errors.dateFrom}
       />
       <Dropdown
         label="Contract number"
         name="contractNumber"
         value={formData.contractNumber}
         onChange={handleChange}
+        error={errors.contractNumber}
       />
     </Form>
   );
