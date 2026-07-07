@@ -1,4 +1,5 @@
 import { HeaderCell, Row, Table } from '@shared/ui/Table';
+import { mockTransactions, TransactionRow } from '@entities/transaction';
 
 export const TransferHistoryTable = () => {
   return (
@@ -10,7 +11,11 @@ export const TransferHistoryTable = () => {
           <HeaderCell>Amount of tips transferred</HeaderCell>
         </Row>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        {mockTransactions.map((transaction) => (
+          <TransactionRow key={transaction.id} transaction={transaction} />
+        ))}
+      </tbody>
     </Table>
   );
 };
