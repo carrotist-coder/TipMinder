@@ -35,4 +35,7 @@
   --even-row-bg: #f9f9f9;
   --columns-count: 5; /* Dynamic value */
   --form-bg: #fafafa;
+
+  /* Error text */
+  --error-text: #dd0a29;
 }

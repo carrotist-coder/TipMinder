@@ -5,6 +5,7 @@ export const Dropdown = ({
   label = null,
   id = name,
   options = [],
+  error = null,
   ...props
 }) => {
   return (
@@ -15,7 +16,12 @@ export const Dropdown = ({
         </label>
       )}
       <div className={styles.wrapper}>
-        <select id={id} name={name} className={styles.select} {...props}>
+        <select
+          id={id}
+          name={name}
+          className={`${styles.select} ${error ? styles.errorInput : ''}`}
+          {...props}
+        >
           {options.map((option) => (
             <option key={option} value={option}>
               {option}
@@ -26,6 +32,7 @@ export const Dropdown = ({
           <use href="/assets/icons/arrow-dropdown.svg"></use>
         </svg>
       </div>
+      {error && <span className={styles.errorText}>{error}</span>}
     </div>
   );
 };

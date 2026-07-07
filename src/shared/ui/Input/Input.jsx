@@ -5,6 +5,7 @@ export const Input = ({
   label = null,
   id = name,
   onSubmit,
+  error = null,
   ...props
 }) => {
   return (
@@ -15,12 +16,13 @@ export const Input = ({
         </label>
       )}
       <input
-        className={styles.input}
+        className={`${styles.input} ${error ? styles.errorInput : ''}`}
         id={id}
         name={name}
         onSubmit={onSubmit}
         {...props}
       />
+      {error && <span className={styles.errorText}>{error}</span>}
     </div>
   );
 };
