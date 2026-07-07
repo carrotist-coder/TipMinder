@@ -1,0 +1,36 @@
+.container {
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 32px 32px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-chart-title);
+}
+
+.footer {
+  margin: 32px 32px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-chart);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--chart-dot);
+}

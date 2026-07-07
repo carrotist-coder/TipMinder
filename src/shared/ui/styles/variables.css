@@ -42,4 +42,7 @@
 
   /* Cards */
   --text-card: #959595;
+  --text-chart-title: #6b6b6b;
+  --text-chart: #444444;
+  --chart-dot: #5dd749;
 }
