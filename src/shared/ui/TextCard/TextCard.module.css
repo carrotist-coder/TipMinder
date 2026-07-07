@@ -4,4 +4,5 @@
   border: 1px solid var(--border-card);
   border-radius: 5px;
   padding: 16px 24px;
+  gap: 12px;
 }

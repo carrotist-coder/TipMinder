@@ -39,4 +39,7 @@
 
   /* Error text */
   --error-text: #dd0a29;
+
+  /* Cards */
+  --text-card: #959595;
 }
