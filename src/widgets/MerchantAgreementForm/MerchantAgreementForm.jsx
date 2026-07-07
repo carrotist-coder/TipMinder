@@ -2,32 +2,17 @@ import { Input } from '@shared/ui/Input';
 import { Dropdown } from '@shared/ui/Dropdown';
 import { Form } from '@shared/ui/Form';
 import { SignContractButton } from '@features/merchant-agreement/SignContract/ui/SignContractButton';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateField } from '@entities/merchant-agreement/model/slice';
 import { BackButton } from '@features/navigation/Back';
-import { useState } from 'react';
-import { merchantValidationMap } from '@entities/merchant-agreement/model/validation';
+import { useMerchantForm } from '@entities/merchant-agreement/hooks/useMerchantForm';
 
 export const MerchantAgreementForm = () => {
-  const [errors, setErrors] = useState({});
-  const dispatch = useDispatch();
-  const formData = useSelector((state) => state.merchantAgreement);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    dispatch(updateField({ field: name, value }));
-
-    const validator = merchantValidationMap[name];
-    if (validator) {
-      setErrors((prev) => ({ ...prev, [name]: validator(value) }));
-    }
-  };
+  const { formData, errors, handleChange, validateAll } = useMerchantForm();
 
   return (
     <Form
       actions={
         <>
-          <SignContractButton formData={formData} />
+          <SignContractButton formData={formData} onValidate={validateAll} />
           <BackButton />
         </>
       }
