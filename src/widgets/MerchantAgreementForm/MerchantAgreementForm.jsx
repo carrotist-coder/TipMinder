@@ -2,13 +2,14 @@ import { Input } from '@shared/ui/Input';
 import { Dropdown } from '@shared/ui/Dropdown';
 import { Button } from '@shared/ui/Button';
 import { Form } from '@shared/ui/Form';
+import { SignContractButton } from '@features/merchant-agreement/SignContract/ui/SignContractButton';
 
 export const MerchantAgreementForm = () => {
   return (
     <Form
       actions={
         <>
-          <Button>Sign contract</Button>
+          <SignContractButton formData={{ test: 'test' }} />
           <Button type="secondary">Back</Button>
         </>
       }
