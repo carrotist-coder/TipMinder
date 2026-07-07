@@ -14,7 +14,7 @@ export const Header = () => {
         <TextLink variant={'nav'} iconHref="">
           About
         </TextLink>
-        <TextLink variant={'nav'} iconHref="">
+        <TextLink variant={'nav'} iconHref="" href="/agreement">
           General condition
         </TextLink>
         <TextLink variant={'nav'} iconHref="">
