@@ -2,10 +2,11 @@ import { Table, Row, HeaderCell } from '@/shared/ui/Table';
 import { CardRow } from '@/entities/card';
 import { LockCardButton, LogoutCardButton } from '@/features/card';
 import { useCards } from '@entities/card/model/useCards';
+import { Loader } from '@shared/ui/Loader';
 
 export const CardsTable = () => {
   const { data, isLoading } = useCards();
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader />;
 
   return (
     <Table columnsCount={5}>
