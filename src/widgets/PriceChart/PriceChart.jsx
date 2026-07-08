@@ -36,7 +36,9 @@ export const PriceChart = () => {
           onChange={setActiveIndex}
         />
       </div>
-      <Chart data={chartData[currentKey]} />
+      <div className={styles.chart}>
+        <Chart data={chartData[currentKey]} />
+      </div>
       <div className={styles.footer}>
         <span className={styles.dot} />
         <p>Amount of tips transferred</p>

@@ -1,3 +1,7 @@
+.card {
+  background-color: var(--white);
+}
+
 .title {
   color: var(--text-card);
   font-weight: 500;
