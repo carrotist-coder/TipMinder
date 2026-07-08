@@ -11,6 +11,7 @@
   height: 72px;
   background-color: var(--white);
   border-bottom: 1px solid var(--border-alt);
+  z-index: 5;
 }
 
 .nav {
