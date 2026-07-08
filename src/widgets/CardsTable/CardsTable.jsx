@@ -1,8 +1,12 @@
 import { Table, Row, HeaderCell } from '@/shared/ui/Table';
-import { CardRow, mockCards } from '@/entities/card';
+import { CardRow } from '@/entities/card';
 import { LockCardButton, LogoutCardButton } from '@/features/card';
+import { useCards } from '@entities/card/model/useCards';
 
 export const CardsTable = () => {
+  const { data, isLoading } = useCards();
+  if (isLoading) return <div>Loading...</div>;
+
   return (
     <Table columnsCount={5}>
       <thead>
@@ -15,7 +19,7 @@ export const CardsTable = () => {
         </Row>
       </thead>
       <tbody>
-        {mockCards.map((card) => (
+        {data.map((card) => (
           <CardRow
             key={card.number}
             card={card}
