@@ -4,9 +4,14 @@ import { Form } from '@shared/ui/Form';
 import { SignContractButton } from '@features/merchant-agreement/SignContract/ui/SignContractButton';
 import { BackButton } from '@features/navigation/Back';
 import { useMerchantForm } from '@entities/merchant-agreement/hooks/useMerchantForm';
+import { useMerchantFormOptions } from '@entities/merchant-agreement/hooks/useMerchantFormOptions';
+import { Loader } from '@shared/ui/Loader';
 
 export const MerchantAgreementForm = () => {
   const { formData, errors, handleChange, validateAll } = useMerchantForm();
+  const { data: options, isLoading: isOptionsLoading } =
+    useMerchantFormOptions();
+  if (isOptionsLoading) return <Loader />;
 
   return (
     <Form
@@ -20,6 +25,7 @@ export const MerchantAgreementForm = () => {
       <Dropdown
         label="Company name"
         name="companyName"
+        options={options?.companyNames || []}
         value={formData.companyName}
         onChange={handleChange}
         error={errors.companyName}
@@ -27,6 +33,7 @@ export const MerchantAgreementForm = () => {
       <Dropdown
         label="Terminal monthly fee"
         name="monthlyFee"
+        options={options?.monthlyFees || []}
         value={formData.monthlyFee}
         onChange={handleChange}
         error={errors.monthlyFee}
@@ -88,6 +95,7 @@ export const MerchantAgreementForm = () => {
       <Dropdown
         label="Contract number"
         name="contractNumber"
+        options={options?.contractNumbers || []}
         value={formData.contractNumber}
         onChange={handleChange}
         error={errors.contractNumber}
