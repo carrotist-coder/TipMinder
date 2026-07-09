@@ -30,3 +30,9 @@
   left: 0;
   background-color: var(--secondary);
 }
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 0;
+  }
+}

@@ -18,3 +18,23 @@
   display: flex;
   gap: calc(16px * 2);
 }
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 18px;
+  }
+
+  .nav {
+    gap: calc(16px * 1.5);
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 12px;
+  }
+
+  .nav {
+    gap: calc(16px * 1);
+  }
+}
