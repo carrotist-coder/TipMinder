@@ -4,3 +4,36 @@
   padding: 72px 320px calc(72px + 32px); /*not sure for content*/
   gap: 32px;
 }
+
+/* Colors for better developing */
+/* Delete them later */
+@media (max-width: 1200px) {
+  .main {
+    background-color: green;
+    padding: 72px 100px calc(72px + 32px);
+  }
+}
+
+/*delete this from here*/
+@media (max-width: 1024px) {
+  .main {
+    background-color: yellow;
+    padding: 72px 100px calc(72px + 32px);
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    background-color: orange;
+    padding: 72px 100px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    background-color: red;
+    padding: 72px 40px;
+    gap: 16px;
+  }
+}
