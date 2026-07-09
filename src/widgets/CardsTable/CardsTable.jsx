@@ -1,7 +1,7 @@
 import { Table, Row, HeaderCell } from '@/shared/ui/Table';
 import { CardRow } from '@/entities/card';
 import { LockCardButton, LogoutCardButton } from '@/features/card';
-import { useCards } from '@entities/card/model/useCards';
+import { useCards } from '@entities/card/hooks/useCards';
 import { Loader } from '@shared/ui/Loader';
 
 export const CardsTable = () => {

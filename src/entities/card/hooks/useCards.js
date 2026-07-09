@@ -1,5 +1,5 @@
 import { useGetCardsQuery } from '../api/cardApi';
-import { mockCards } from './mock';
+import { mockCards } from '../model/mock';
 
 export const useCards = () => {
   const { data, isLoading, isError } = useGetCardsQuery();
