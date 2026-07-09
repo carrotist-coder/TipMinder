@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateField } from '@entities/merchant-agreement/model/slice';
 import { merchantValidationMap } from '@entities/merchant-agreement/model/validation';
@@ -8,15 +8,18 @@ export const useMerchantForm = () => {
   const dispatch = useDispatch();
   const formData = useSelector((state) => state.merchantAgreement);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    dispatch(updateField({ field: name, value }));
+  const handleChange = useCallback(
+    (e) => {
+      const { name, value } = e.target;
+      dispatch(updateField({ field: name, value }));
 
-    const validator = merchantValidationMap[name];
-    if (validator) {
-      setErrors((prev) => ({ ...prev, [name]: validator(value) }));
-    }
-  };
+      const validator = merchantValidationMap[name];
+      if (validator) {
+        setErrors((prev) => ({ ...prev, [name]: validator(value) }));
+      }
+    },
+    [dispatch],
+  );
 
   const validateAll = () => {
     const newErrors = {};

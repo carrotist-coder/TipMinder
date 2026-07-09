@@ -6,11 +6,41 @@ import { BackButton } from '@features/navigation/Back';
 import { useMerchantForm } from '@entities/merchant-agreement/hooks/useMerchantForm';
 import { useMerchantFormOptions } from '@entities/merchant-agreement/hooks/useMerchantFormOptions';
 import { Loader } from '@shared/ui/Loader';
+import { useEffect, useRef } from 'react';
 
 export const MerchantAgreementForm = () => {
   const { formData, errors, handleChange, validateAll } = useMerchantForm();
   const { data: options, isLoading: isOptionsLoading } =
     useMerchantFormOptions();
+
+  const isInitialized = useRef(false);
+  useEffect(() => {
+    if (options && !isInitialized.current) {
+      if (options.companyNames?.length > 0 && !formData.companyName) {
+        handleChange({
+          target: { name: 'companyName', value: options.companyNames[0] },
+        });
+      }
+      if (options.monthlyFees?.length > 0 && !formData.monthlyFee) {
+        handleChange({
+          target: { name: 'monthlyFee', value: options.monthlyFees[0] },
+        });
+      }
+      if (options.contractNumbers?.length > 0 && !formData.contractNumber) {
+        handleChange({
+          target: { name: 'contractNumber', value: options.contractNumbers[0] },
+        });
+      }
+      isInitialized.current = true;
+    }
+  }, [
+    options,
+    formData.companyName,
+    formData.monthlyFee,
+    formData.contractNumber,
+    handleChange,
+  ]);
+
   if (isOptionsLoading) return <Loader />;
 
   return (
