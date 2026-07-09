@@ -8,27 +8,12 @@ import {
   AreaChart,
 } from 'recharts';
 
-export const Chart = ({
-  data = [
-    { name: '0', value: 0.6 },
-    { name: '1', value: 0.2 },
-    { name: '2', value: 0.9 },
-    { name: '3', value: 0.1 },
-    { name: '4', value: 0.42 },
-    { name: '5', value: 0.3 },
-    { name: '6', value: 0.2 },
-  ],
-}) => (
+export const Chart = ({ data }) => (
   <ResponsiveContainer width="100%" height={600}>
     <AreaChart data={data}>
       <CartesianGrid vertical={false} stroke="#D0D0D0" />
       <XAxis dataKey="name" hide={true} />
-      <YAxis
-        domain={[0, 1]}
-        ticks={[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]}
-        axisLine={false}
-        tickLine={false}
-      />
+      <YAxis axisLine={false} tickLine={false} />
 
       <Tooltip
         cursor={{ stroke: '#ff8c00', strokeWidth: 1 }}
