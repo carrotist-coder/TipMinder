@@ -1,0 +1,23 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container {
+  background-color: var(--error-bg);
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.error {
+  color: var(--error-text);
+  font-weight: 600;
+  font-size: 96px;
+}
+
+.button {
+  align-self: flex-start;
+}

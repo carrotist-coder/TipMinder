@@ -11,19 +11,19 @@ export const Header = () => {
     <header className={styles.header}>
       <Logo />
       <nav className={styles.nav}>
-        <TextLink variant={'nav'} iconHref="">
+        <TextLink variant={'nav'} iconHref="" href="/about">
           About
         </TextLink>
         <TextLink variant={'nav'} iconHref="" href="/agreement">
           General condition
         </TextLink>
-        <TextLink variant={'nav'} iconHref="">
+        <TextLink variant={'nav'} iconHref="" href="/price">
           Price list
         </TextLink>
-        <TextLink variant={'nav'} iconHref="">
+        <TextLink variant={'nav'} iconHref="" href="/faq">
           FAQ
         </TextLink>
-        <TextLink variant={'nav'} iconHref="">
+        <TextLink variant={'nav'} iconHref="" href="/contacts">
           Contacts
         </TextLink>
       </nav>
