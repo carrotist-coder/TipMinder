@@ -1,18 +1,7 @@
-import { useGetCardsQuery } from '../api/cardApi';
-import { mockCards } from '../model/mock';
+import { useGetCardsQuery } from '@entities/card/api/cardApi';
+import { mockCards } from '@entities/card';
+import { useApiWithMock } from '@shared/lib/hooks/useApiWithMock';
 
 export const useCards = () => {
-  const { data, isLoading, isError } = useGetCardsQuery();
-
-  if (isError || !data) {
-    console.warn('API not available, mock data');
-    return { data: mockCards, isLoading: false, isError: true };
-  }
-
-  console.log('API available');
-  return {
-    data: data,
-    isLoading,
-    isError,
-  };
+  return useApiWithMock(useGetCardsQuery, mockCards);
 };
