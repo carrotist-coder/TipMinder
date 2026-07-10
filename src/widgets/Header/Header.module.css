@@ -25,7 +25,7 @@
   }
 
   .nav {
-    gap: calc(16px * 1.5);
+    gap: calc(16px * 1.4);
   }
 }
 
@@ -35,6 +35,6 @@
   }
 
   .nav {
-    gap: calc(16px * 1);
+    display: none;
   }
 }
