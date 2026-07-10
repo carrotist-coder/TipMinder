@@ -6,9 +6,11 @@ import { BackButton } from '@features/navigation/Back';
 import { useMerchantForm } from '@entities/merchant-agreement/hooks/useMerchantForm';
 import { useMerchantFormOptions } from '@entities/merchant-agreement/hooks/useMerchantFormOptions';
 import { Loader } from '@shared/ui/Loader';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { SuccessCard } from '@entities/merchant-agreement/ui/SuccessCard';
 
 export const MerchantAgreementForm = () => {
+  const [isSigned, setIsSigned] = useState(false);
   const { formData, errors, handleChange, validateAll } = useMerchantForm();
   const { data: options, isLoading: isOptionsLoading } =
     useMerchantFormOptions();
@@ -41,13 +43,18 @@ export const MerchantAgreementForm = () => {
     handleChange,
   ]);
 
+  if (isSigned) return <SuccessCard />;
   if (isOptionsLoading) return <Loader />;
 
   return (
     <Form
       actions={
         <>
-          <SignContractButton formData={formData} onValidate={validateAll} />
+          <SignContractButton
+            formData={formData}
+            onValidate={validateAll}
+            onSuccess={() => setIsSigned(true)}
+          />
           <BackButton />
         </>
       }
