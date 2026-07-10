@@ -1,8 +1,15 @@
+.container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
 .table {
   width: 100%;
   border-spacing: 0;
   border: 1px solid var(--border-alt);
   border-radius: 10px;
+  min-width: calc(var(--columns-count) * 150px);
 }
 
 .table thead .row {
@@ -14,7 +21,7 @@
 .row {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(var(--columns-count), 1fr);
+  grid-template-columns: repeat(var(--columns-count), minmax(100px, 1fr));
   border-bottom: 1px solid var(--border-alt);
   background-color: var(--row-bg);
   height: 63px;
