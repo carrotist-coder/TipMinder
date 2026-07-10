@@ -6,11 +6,11 @@ import { BackButton } from '@features/navigation/Back';
 import { useMerchantForm } from '@entities/merchant-agreement/hooks/useMerchantForm';
 import { useMerchantFormOptions } from '@entities/merchant-agreement/hooks/useMerchantFormOptions';
 import { Loader } from '@shared/ui/Loader';
-import { useEffect, useRef, useState } from 'react';
-import { SuccessCard } from '@entities/merchant-agreement/ui/SuccessCard';
+import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const MerchantAgreementForm = () => {
-  const [isSigned, setIsSigned] = useState(false);
+  const navigate = useNavigate();
   const { formData, errors, handleChange, validateAll } = useMerchantForm();
   const { data: options, isLoading: isOptionsLoading } =
     useMerchantFormOptions();
@@ -43,7 +43,6 @@ export const MerchantAgreementForm = () => {
     handleChange,
   ]);
 
-  if (isSigned) return <SuccessCard />;
   if (isOptionsLoading) return <Loader />;
 
   return (
@@ -53,7 +52,12 @@ export const MerchantAgreementForm = () => {
           <SignContractButton
             formData={formData}
             onValidate={validateAll}
-            onSuccess={() => setIsSigned(true)}
+            onSuccess={() =>
+              navigate('/success', {
+                state: { fromAgreement: true },
+                replace: true,
+              })
+            }
           />
           <BackButton />
         </>
