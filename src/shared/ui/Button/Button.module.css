@@ -53,3 +53,10 @@
   width: 24px;
   height: 24px;
 }
+
+@media (max-width: 768px) {
+  .button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
