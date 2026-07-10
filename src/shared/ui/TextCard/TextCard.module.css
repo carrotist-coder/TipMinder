@@ -7,3 +7,9 @@
   gap: 12px;
   background-color: var(--white);
 }
+
+@media (max-width: 1024px) {
+  .card {
+    padding: 14px 0 14px 14px;
+  }
+}

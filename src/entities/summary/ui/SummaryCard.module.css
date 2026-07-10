@@ -15,3 +15,9 @@
   font-size: 16px;
   font-family: Poppins, sans-serif;
 }
+
+@media (max-width: 1024px) {
+  .value {
+    font-size: 15px;
+  }
+}

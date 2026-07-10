@@ -45,3 +45,28 @@
 .th {
   font-weight: 500;
 }
+
+@media (max-width: 1770px) {
+  .row {
+    font-size: 15px;
+  }
+
+  .th,
+  .td {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .row {
+    height: 50px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    height: 40px;
+    font-size: 13px;
+  }
+}

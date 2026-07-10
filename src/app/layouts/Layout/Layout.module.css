@@ -7,6 +7,20 @@
 
 /* Colors for better developing */
 /* Delete them later */
+@media (max-width: 1770px) {
+  .main {
+    background-color: gray;
+    padding: 72px 250px calc(72px + 32px);
+  }
+}
+
+@media (max-width: 1440px) {
+  .main {
+    background-color: lightblue;
+    padding: 72px 200px calc(72px + 32px);
+  }
+}
+
 @media (max-width: 1200px) {
   .main {
     background-color: green;
@@ -25,7 +39,7 @@
 @media (max-width: 768px) {
   .main {
     background-color: orange;
-    padding: 72px 100px;
+    padding: 72px 70px;
     gap: 16px;
   }
 }
