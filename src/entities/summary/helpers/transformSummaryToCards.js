@@ -6,7 +6,7 @@ export const transformSummaryToCards = (data) => {
       title: 'Username',
       value: summary.username,
       linkText: 'Edit Profile',
-      linkTo: '/',
+      linkTo: '/auth',
     },
     {
       title: 'Card',
