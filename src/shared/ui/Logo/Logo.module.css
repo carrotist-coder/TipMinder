@@ -36,3 +36,9 @@
     font-size: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 14px;
+  }
+}

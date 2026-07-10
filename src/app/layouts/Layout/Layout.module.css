@@ -1,44 +1,30 @@
 .main {
   display: flex;
   flex-direction: column;
-  padding: 72px 320px calc(72px + 32px); /*not sure for content*/
+  padding: 72px 320px calc(72px + 32px);
   gap: 32px;
 }
 
-/* Colors for better developing */
-/* Delete them later */
 @media (max-width: 1770px) {
   .main {
-    background-color: gray;
     padding: 72px 250px calc(72px + 32px);
   }
 }
 
 @media (max-width: 1440px) {
   .main {
-    background-color: lightblue;
     padding: 72px 200px calc(72px + 32px);
   }
 }
 
 @media (max-width: 1200px) {
   .main {
-    background-color: green;
-    padding: 72px 100px calc(72px + 32px);
-  }
-}
-
-/*delete this from here*/
-@media (max-width: 1024px) {
-  .main {
-    background-color: yellow;
     padding: 72px 100px calc(72px + 32px);
   }
 }
 
 @media (max-width: 768px) {
   .main {
-    background-color: orange;
     padding: 72px 70px;
     gap: 16px;
   }
@@ -46,7 +32,6 @@
 
 @media (max-width: 480px) {
   .main {
-    background-color: red;
     padding: 72px 40px;
     gap: 16px;
   }

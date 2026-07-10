@@ -10,21 +10,6 @@
   --border-form: #d6d6d6;
   --border-card: #cecece;
   --gradient: linear-gradient(-100deg, #eec595, #f1804f 52%, #edd098 100%);
-  /*
-    Not sure for this gradient
-
-  --border-gradient: linear-gradient(
-          -35deg,
-          rgba(255,255,255,0.67),
-          rgba(255,255,255,0.29),
-  );
-    */
-
-  /* Breakpoints */
-  --bp-desktop: 1200px;
-  --bp-tablet-landscape: 1024px;
-  --bp-tablet: 768px;
-  --bp-mobile: 480px;
 
   /* Status Badges */
   --error-bg: #fbecee;
