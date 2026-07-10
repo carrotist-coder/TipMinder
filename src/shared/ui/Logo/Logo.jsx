@@ -1,9 +1,9 @@
 import styles from './Logo.module.css';
 import { Link } from 'react-router-dom';
 
-export const Logo = ({ isIcon = true, isText = true }) => {
+export const Logo = ({ isIcon = true, isText = true, ...props }) => {
   return (
-    <Link className={styles.logo} to={'/'}>
+    <Link className={styles.logo} to={'/'} {...props}>
       {isIcon && (
         <div className={styles.icon}>
           <div className={styles.oval}></div>

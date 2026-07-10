@@ -19,6 +19,11 @@
   gap: calc(16px * 2);
 }
 
+.burger,
+.mobileMenu {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .header {
     padding: 0 18px;
@@ -34,7 +39,42 @@
     padding: 0 12px;
   }
 
-  .nav {
+  .nav,
+  .authButton {
     display: none;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .burger span {
+    height: 2px;
+    background-color: var(--text);
+  }
+
+  .mobileMenu.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: calc(72px - 5px);
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px 16px;
+    gap: 10px;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }
