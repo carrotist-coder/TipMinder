@@ -1,7 +1,8 @@
 import { Button } from '@/shared/ui/Button';
-import { handleLogout } from '@features/auth/Logout/model/service';
+import { useLogout } from '@features/auth/Logout/hooks/useLogout';
 
 export const LogoutButton = () => {
+  const handleLogout = useLogout();
   return (
     <Button iconHref="/assets/icons/user-icon.svg" onClick={handleLogout}>
       Log out

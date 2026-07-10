@@ -1,7 +1,7 @@
 import { login } from '@entities/user/model/slice';
-import { store } from '@app/store/store';
 
-export const handleLogin = () => {
+export const loginService = (dispatch, navigate) => {
   console.log('Login');
-  store.dispatch(login());
+  dispatch(login());
+  navigate('/');
 };

@@ -1,7 +1,7 @@
-import { logout } from '@/entities/user/model/slice';
-import { store } from '@app/store/store';
+import { logout } from '@entities/user/model/slice';
 
-export const handleLogout = () => {
+export const logoutService = (dispatch, navigate) => {
   console.log('Logout');
-  store.dispatch(logout());
+  dispatch(logout());
+  navigate('/auth');
 };
