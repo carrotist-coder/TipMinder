@@ -60,7 +60,7 @@
 
   .th,
   .td {
-    padding: 16px;
+    padding: 0 16px 0;
   }
 }
 
@@ -75,5 +75,9 @@
   .row {
     height: 40px;
     font-size: 13px;
+  }
+
+  .td {
+    gap: 8px;
   }
 }

@@ -28,3 +28,10 @@
   background-color: var(--suspended-bg);
   color: var(--suspended-cl);
 }
+
+@media (max-width: 768px) {
+  .badge {
+    font-size: 12px;
+    padding: 4px 16px;
+  }
+}
