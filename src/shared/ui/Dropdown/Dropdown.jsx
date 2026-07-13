@@ -1,4 +1,5 @@
 import styles from '@shared/ui/styles/input-base.module.css';
+import { ICONS } from '@shared/config/assets';
 
 export const Dropdown = ({
   name,
@@ -29,7 +30,7 @@ export const Dropdown = ({
           ))}
         </select>
         <svg className={styles.icon}>
-          <use href="/assets/sprite.svg#arrow-dropdown"></use>
+          <use href={ICONS.ARROW_DROPDOWN}></use>
         </svg>
       </div>
       {error && <span className={styles.errorText}>{error}</span>}

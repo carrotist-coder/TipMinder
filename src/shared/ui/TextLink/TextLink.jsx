@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import styles from './TextLink.module.css';
+import { ICONS } from '@shared/config/assets';
 
 export const TextLink = ({
   children,
   href,
-  iconHref = '/assets/sprite.svg#arrow-link',
+  iconHref = ICONS.ARROW_LINK,
   variant = '',
   ...props
 }) => {
