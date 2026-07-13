@@ -5,4 +5,10 @@ export const ROUTES = {
   DETAILS: '/details',
   CARDS: '/cards',
   SUCCESS_MERCHANT_AGREEMENT: '/success',
+
+  // Not implemented - redirect to Not Found 404
+  ABOUT: '/about',
+  PRICE_LIST: '/price',
+  FAQ: '/faq',
+  CONTACTS: '/contacts',
 };

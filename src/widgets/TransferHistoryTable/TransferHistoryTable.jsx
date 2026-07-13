@@ -1,7 +1,8 @@
-import { HeaderCell, Row, Table } from '@shared/ui/Table';
+import { Table } from '@shared/ui/Table';
 import { TransactionRow } from '@entities/transaction';
 import { Loader } from '@shared/ui/Loader';
 import { useTransactions } from '@entities/transaction/hooks/useTransactions';
+import { TransferHistoryTableHeader } from '@widgets/TransferHistoryTable/TransferHistoryTableHeader';
 
 export const TransferHistoryTable = () => {
   const { data, isLoading } = useTransactions();
@@ -10,11 +11,7 @@ export const TransferHistoryTable = () => {
   return (
     <Table columnsCount={3}>
       <thead>
-        <Row>
-          <HeaderCell>Data</HeaderCell>
-          <HeaderCell>Location</HeaderCell>
-          <HeaderCell>Amount of tips transferred</HeaderCell>
-        </Row>
+        <TransferHistoryTableHeader />
       </thead>
       <tbody>
         {data.map((transaction) => (

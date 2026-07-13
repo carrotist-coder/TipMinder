@@ -8,7 +8,9 @@ import { useMerchantFormOptions } from '@entities/merchant-agreement/hooks/useMe
 import { Loader } from '@shared/ui/Loader';
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '@shared/config/routes';
 
+// NOT SURE YET
 export const MerchantAgreementForm = () => {
   const navigate = useNavigate();
   const { formData, errors, handleChange, validateAll } = useMerchantForm();
@@ -53,7 +55,7 @@ export const MerchantAgreementForm = () => {
             formData={formData}
             onValidate={validateAll}
             onSuccess={() =>
-              navigate('/success', {
+              navigate(ROUTES.SUCCESS_MERCHANT_AGREEMENT, {
                 state: { fromAgreement: true },
                 replace: true,
               })
