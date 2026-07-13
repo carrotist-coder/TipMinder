@@ -1,5 +1,5 @@
 import { Button } from '@/shared/ui/Button';
-import { signContract } from '../model/service';
+import { signContract } from '@features/merchant-agreement/SignContract/model/service';
 
 export const SignContractButton = ({ formData, onValidate, onSuccess }) => {
   const handleSignContract = (e) => {

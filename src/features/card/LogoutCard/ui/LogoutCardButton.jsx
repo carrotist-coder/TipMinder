@@ -1,5 +1,6 @@
 import { Button } from '@/shared/ui/Button';
 import { logoutCard } from '../model/service';
+import { ICONS } from '@shared/config/assets';
 
 export const LogoutCardButton = ({ id }) => {
   const handleLogout = () => {
@@ -7,7 +8,7 @@ export const LogoutCardButton = ({ id }) => {
   };
   return (
     <Button
-      iconHref="/assets/sprite.svg#logout-circle"
+      iconHref={ICONS.LOGOUT}
       onClick={handleLogout}
       aria-label="Logout card"
     />
