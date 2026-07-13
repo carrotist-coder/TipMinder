@@ -9,9 +9,8 @@ const merchantAgreementSlice = createSlice({
       const { field, value } = action.payload;
       state[field] = value;
     },
-    resetForm: () => initMerchantAgreement(),
   },
 });
 
-export const { updateField, resetForm } = merchantAgreementSlice.actions;
+export const { updateField } = merchantAgreementSlice.actions;
 export const merchantAgreementReducer = merchantAgreementSlice.reducer;
