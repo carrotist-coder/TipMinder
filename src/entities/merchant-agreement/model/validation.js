@@ -1,13 +1,13 @@
-import * as v from '@shared/lib/validators';
+import * as v from '@shared/lib/helpers/validators/formValidators';
 
 export const merchantValidationMap = {
-  companyName: v.isValidCompanyName,
-  monthlyFee: v.isValidMonthlyFee,
-  personalCode: v.isValidPersonalCode,
-  phoneNumber: v.isValidPhone,
-  address: v.isValidAddress,
-  bankAccount: v.isValidBAN,
-  email: v.isValidEmail,
-  dateFrom: v.isValidDateFrom,
-  contractNumber: v.isValidContractNumber,
+  companyName: v.validateCompanyName,
+  monthlyFee: v.validateMonthlyFee,
+  personalCode: v.validatePersonalCode,
+  phoneNumber: v.validatePhone,
+  address: v.validateAddress,
+  bankAccount: v.validateBAN,
+  email: v.validateEmail,
+  dateFrom: v.validateDateFrom,
+  contractNumber: v.validateContractNumber,
 };
