@@ -4,7 +4,7 @@ import styles from './TextLink.module.css';
 export const TextLink = ({
   children,
   href,
-  iconHref = '/assets/icons/arrow-link.svg',
+  iconHref = '/assets/sprite.svg#arrow-link',
   variant = '',
   ...props
 }) => {

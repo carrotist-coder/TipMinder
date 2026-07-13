@@ -5,5 +5,7 @@ export const LockCardButton = ({ id }) => {
   const handleLock = () => {
     lockCard(id);
   };
-  return <Button iconHref="/assets/icons/lock-fill.svg" onClick={handleLock} />;
+  return (
+    <Button iconHref="/assets/sprite.svg#lock-fill" onClick={handleLock} />
+  );
 };

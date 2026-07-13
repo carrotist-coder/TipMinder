@@ -6,6 +6,9 @@ export const LogoutCardButton = ({ id }) => {
     logoutCard(id);
   };
   return (
-    <Button iconHref="/assets/icons/logout-circle.svg" onClick={handleLogout} />
+    <Button
+      iconHref="/assets/sprite.svg#logout-circle"
+      onClick={handleLogout}
+    />
   );
 };

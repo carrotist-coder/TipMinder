@@ -29,7 +29,7 @@ export const Dropdown = ({
           ))}
         </select>
         <svg className={styles.icon}>
-          <use href="/assets/icons/arrow-dropdown.svg"></use>
+          <use href="/assets/sprite.svg#arrow-dropdown"></use>
         </svg>
       </div>
       {error && <span className={styles.errorText}>{error}</span>}
