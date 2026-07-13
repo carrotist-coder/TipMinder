@@ -6,7 +6,6 @@ export const useApiWithMock = (useQueryHook, mockData) => {
     return { data: mockData, isLoading: false, isError: true };
   }
 
-  console.log('API available'); // delete later
   return {
     data: result.data,
     isLoading: result.isLoading,
