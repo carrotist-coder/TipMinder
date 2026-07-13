@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { USER_DEFAULT_IS_AUTH } from '@entities/user/model/config';
 
 const userSlice = createSlice({
   name: 'user',
-  initialState: { isAuth: true },
+  initialState: { isAuth: USER_DEFAULT_IS_AUTH },
   reducers: {
     login: (state) => {
       state.isAuth = true;

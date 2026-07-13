@@ -1,3 +1,6 @@
+import { ROUTES } from '@shared/config/routes';
+import { LINKS } from '@entities/summary/helpers/constants';
+
 export const transformSummaryToCards = (data) => {
   const summary = data?.summary ? data.summary[0] : data;
   if (!summary) return [];
@@ -5,38 +8,38 @@ export const transformSummaryToCards = (data) => {
     {
       title: 'Username',
       value: summary.username,
-      linkText: 'Edit Profile',
-      linkTo: '/auth',
+      linkText: LINKS.EDIT_PROFILE,
+      linkTo: ROUTES.AUTH,
     },
     {
       title: 'Card',
       value: summary.cardNumber,
-      linkText: 'See other cards',
-      linkTo: '/cards',
+      linkText: LINKS.OTHER_CARDS,
+      linkTo: ROUTES.CARDS,
     },
     {
       title: 'Tips transferred',
       value: summary.tipsTransferred,
-      linkText: 'View details',
-      linkTo: '/cards',
+      linkText: LINKS.DETAILS,
+      linkTo: ROUTES.CARDS,
     },
     {
       title: 'Tips amount',
       value: summary.tipsAmount,
-      linkText: 'View details',
-      linkTo: '/cards',
+      linkText: LINKS.DETAILS,
+      linkTo: ROUTES.CARDS,
     },
     {
       title: 'GPT paid',
       value: summary.gptPaid,
-      linkText: 'View details',
-      linkTo: '/cards',
+      linkText: LINKS.DETAILS,
+      linkTo: ROUTES.CARDS,
     },
     {
       title: 'Tips processing',
       value: summary.tipsProcessing,
-      linkText: 'View details',
-      linkTo: '/cards',
+      linkText: LINKS.DETAILS,
+      linkTo: ROUTES.CARDS,
     },
   ];
 };
