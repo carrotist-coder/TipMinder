@@ -86,6 +86,11 @@ module.exports = (env, argv) => {
             to: path.resolve(__dirname, 'dist/assets'),
             noErrorOnMissing: true,
           },
+          {
+            from: path.resolve(__dirname, 'public/robots.txt'),
+            to: path.resolve(__dirname, 'dist/robots.txt'),
+            noErrorOnMissing: true,
+          },
         ],
       }),
     ],
