@@ -9,6 +9,7 @@ export const LogoutCardButton = ({ id }) => {
     <Button
       iconHref="/assets/sprite.svg#logout-circle"
       onClick={handleLogout}
+      aria-label="Logout card"
     />
   );
 };

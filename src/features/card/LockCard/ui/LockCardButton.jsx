@@ -6,6 +6,10 @@ export const LockCardButton = ({ id }) => {
     lockCard(id);
   };
   return (
-    <Button iconHref="/assets/sprite.svg#lock-fill" onClick={handleLock} />
+    <Button
+      iconHref="/assets/sprite.svg#lock-fill"
+      onClick={handleLock}
+      aria-label="Lock card"
+    />
   );
 };

@@ -47,7 +47,11 @@ export const Header = () => {
       </div>
 
       {/* Mobile */}
-      <button className={styles.burger} onClick={toggleMenu}>
+      <button
+        className={styles.burger}
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
         <span />
         <span />
         <span />
