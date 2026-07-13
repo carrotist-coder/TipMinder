@@ -1,2 +1,2 @@
-export { MerchantAgreement } from './MerchantAgreement';
-export { Success } from './Success';
+import { MerchantAgreement } from './MerchantAgreement';
+export default MerchantAgreement;
