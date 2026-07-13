@@ -1,63 +1,117 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-module.exports = {
-  mode: 'development',
-  entry: './src/app/index.jsx',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.[contenthash].js',
-    clean: true,
-    publicPath: '/',
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src/'),
-      '@app': path.resolve(__dirname, 'src/app/'),
-      '@pages': path.resolve(__dirname, 'src/pages/'),
-      '@widgets': path.resolve(__dirname, 'src/widgets/'),
-      '@features': path.resolve(__dirname, 'src/features/'),
-      '@entities': path.resolve(__dirname, 'src/entities/'),
-      '@shared': path.resolve(__dirname, 'src/shared/'),
+module.exports = (env, argv) => {
+  const isProduction = argv.mode === 'production';
+
+  return {
+    mode: isProduction ? 'production' : 'development',
+    devtool: isProduction ? false : 'eval-cheap-module-source-map',
+    entry: './src/app/index.jsx',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: isProduction ? 'js/[name].[contenthash:8].js' : 'js/[name].js',
+      clean: true,
+      publicPath: '/',
     },
-    extensions: ['.js', '.jsx'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src/'),
+        '@app': path.resolve(__dirname, 'src/app/'),
+        '@pages': path.resolve(__dirname, 'src/pages/'),
+        '@widgets': path.resolve(__dirname, 'src/widgets/'),
+        '@features': path.resolve(__dirname, 'src/features/'),
+        '@entities': path.resolve(__dirname, 'src/entities/'),
+        '@shared': path.resolve(__dirname, 'src/shared/'),
       },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
+      extensions: ['.js', '.jsx'],
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
             options: {
-              esModule: false,
-              modules: {
-                auto: true,
-                namedExport: false,
-                exportLocalsConvention: 'asIs',
-                localIdentName: '[name]__[local]--[hash:base64:5]',
-              },
+              presets: [
+                [
+                  '@babel/preset-react',
+                  {
+                    development: !isProduction,
+                    runtime: 'automatic',
+                  },
+                ],
+              ],
             },
           },
+        },
+        {
+          test: /\.css$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                esModule: false,
+                modules: {
+                  auto: true,
+                  namedExport: false,
+                  exportLocalsConvention: 'asIs',
+                  localIdentName: isProduction
+                    ? '[hash:base64:8]'
+                    : '[name]__[local]--[hash:base64:5]',
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
+    plugins: [
+      new HtmlWebpackPlugin({ template: './public/index.html' }),
+      new ESLintPlugin({ extensions: ['js', 'jsx'] }),
+      new MiniCssExtractPlugin({
+        filename: isProduction
+          ? 'css/[name].[contenthash:8].css'
+          : 'css/[name].css',
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, 'public/assets'),
+            to: path.resolve(__dirname, 'dist/assets'),
+            noErrorOnMissing: true,
+          },
         ],
-      },
+      }),
     ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({ template: './public/index.html' }),
-    new ESLintPlugin({ extensions: ['js', 'jsx'] }),
-  ],
-  devServer: {
-    port: 3000,
-    hot: true,
-    open: true,
-    historyApiFallback: true,
-  },
+    optimization: {
+      minimize: isProduction,
+      splitChunks: {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+        },
+      },
+    },
+    devServer: {
+      port: 3000,
+      hot: !isProduction,
+      open: true,
+      historyApiFallback: true,
+      headers: {
+        'Cache-Control': isProduction
+          ? 'public, max-age=31536000, immutable'
+          : 'no-store',
+      },
+    },
+  };
 };
