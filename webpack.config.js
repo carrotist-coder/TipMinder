@@ -9,6 +9,7 @@ module.exports = (env, argv) => {
   const repoName = 'TipMinder';
   const isGitHubPages =
     isProduction && process.env.DECOY_DEST === 'github_pages';
+  const publicUrl = isGitHubPages ? `/${repoName}` : '';
 
   return {
     mode: isProduction ? 'production' : 'development',
@@ -78,7 +79,7 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: './public/index.html',
         templateParameters: {
-          PUBLIC_URL: isGitHubPages ? `/${repoName}` : '',
+          PUBLIC_URL: publicUrl,
         },
       }),
       new ESLintPlugin({ extensions: ['js', 'jsx'] }),
