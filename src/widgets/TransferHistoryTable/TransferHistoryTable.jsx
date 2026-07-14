@@ -2,16 +2,17 @@ import { Table } from '@shared/ui/Table';
 import { TransactionRow } from '@entities/transaction';
 import { Loader } from '@shared/ui/Loader';
 import { useTransactions } from '@entities/transaction/hooks/useTransactions';
-import { TransferHistoryTableHeader } from '@widgets/TransferHistoryTable/TransferHistoryTableHeader';
+import { TransferHistoryTableHead } from '@widgets/TransferHistoryTable/TransferHistoryTableHead';
+import { transferHistoryTableHeadTitles } from '@widgets/TransferHistoryTable/constants';
 
 export const TransferHistoryTable = () => {
   const { data, isLoading } = useTransactions();
   if (isLoading) return <Loader />;
 
   return (
-    <Table columnsCount={3}>
+    <Table columnsCount={transferHistoryTableHeadTitles.length}>
       <thead>
-        <TransferHistoryTableHeader />
+        <TransferHistoryTableHead />
       </thead>
       <tbody>
         {data.map((transaction) => (

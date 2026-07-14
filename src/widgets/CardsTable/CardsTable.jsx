@@ -3,16 +3,17 @@ import { CardRow } from '@/entities/card';
 import { LockCardButton, LogoutCardButton } from '@/features/card';
 import { useCards } from '@entities/card/hooks/useCards';
 import { Loader } from '@shared/ui/Loader';
-import { CardsTableHeader } from '@widgets/CardsTable/CardsTableHeader';
+import { CardsTableHead } from '@widgets/CardsTable/CardsTableHead';
+import { cardsTableHeadTitles } from '@widgets/CardsTable/constants';
 
 export const CardsTable = () => {
   const { data, isLoading } = useCards();
   if (isLoading) return <Loader />;
 
   return (
-    <Table columnsCount={5}>
+    <Table columnsCount={cardsTableHeadTitles.length}>
       <thead>
-        <CardsTableHeader />
+        <CardsTableHead />
       </thead>
       <tbody>
         {data.map((card) => (
