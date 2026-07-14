@@ -13,9 +13,7 @@ export const Auth = () => {
   return (
     <ActionCard
       heading={AUTH_PAGE_HEADING}
-      text={
-        isAuth ? { AUTH_PAGE_TEXT_IS_AUTH } : { AUTH_PAGE_TEXT_IS_NOT_AUTH }
-      }
+      text={isAuth ? AUTH_PAGE_TEXT_IS_AUTH : AUTH_PAGE_TEXT_IS_NOT_AUTH}
       actions={isAuth ? <LogoutButton /> : <LoginButton />}
     />
   );
