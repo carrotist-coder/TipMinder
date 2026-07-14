@@ -1,4 +1,8 @@
-export const BASE_URL = 'https://dummyjson.com';
+const isLocalhost =
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1';
+
+export const BASE_URL = isLocalhost ? '/api' : 'https://dummyjson.com';
 
 export const ENDPOINTS = {
   CARDS: '/c/47e8-5750-4d0b-8750',

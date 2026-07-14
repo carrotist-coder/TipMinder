@@ -135,6 +135,14 @@ module.exports = (env, argv) => {
           ? 'public, max-age=31536000, immutable'
           : 'no-store',
       },
+      proxy: [
+        {
+          context: ['/api'],
+          target: 'https://dummyjson.com',
+          changeOrigin: true,
+          pathRewrite: { '^/api': '' },
+        },
+      ],
     },
   };
 };
