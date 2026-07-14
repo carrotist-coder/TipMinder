@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { merchantValidationMap } from '@entities/merchant-agreement/model/validation';
+import { validateFormFields } from '@entities/merchant-agreement/model/utils';
 
 export const useMerchantForm = () => {
   const [errors, setErrors] = useState({});
@@ -21,21 +22,11 @@ export const useMerchantForm = () => {
     setFormData((prev) => ({ ...prev, ...fields }));
   }, []);
 
-  const validateAll = () => {
-    const newErrors = {};
-    let isValid = true;
-
-    Object.keys(merchantValidationMap).forEach((key) => {
-      const error = merchantValidationMap[key](formData[key]);
-      if (error) {
-        newErrors[key] = error;
-        isValid = false;
-      }
-    });
-
+  const validateAll = useCallback(() => {
+    const { errors: newErrors, isValid } = validateFormFields(formData);
     setErrors(newErrors);
     return isValid;
-  };
+  }, [formData]);
 
   return { formData, errors, handleChange, validateAll, setFields };
 };
