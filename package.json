@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "Markouski Dzmirty",
   "license": "ISC",
-  "description": "",
+  "description": "A convenient tip tracker for monitoring revenue and analytics.",
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",
     "react": "^19.2.7",
