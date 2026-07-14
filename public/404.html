@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TipMinder</title>
+  <script type="text/javascript">
+    var pathName = window.location.pathname;
+    var isGitHubPages = window.location.hostname.indexOf('github.io') !== -1;
+    var repoName = isGitHubPages ? pathName.split('/')[1] : '';
+    var basePrefix = repoName ? '/' + repoName : '';
+    var routePath = repoName
+      ? pathName.replace(new RegExp('^\\/' + repoName), '')
+      : pathName;
+    var destination = window.location.protocol + '//' + window.location.host + basePrefix + '/?p=' +
+      encodeURIComponent(routePath.replace(/^\//, '')) +
+      window.location.search +
+      window.location.hash;
+    window.location.replace(destination);
+  </script>
+</head>
+<body>
+</body>
+</html>

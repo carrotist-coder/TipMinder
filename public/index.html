@@ -5,6 +5,20 @@
   <meta name="description" content="A convenient tip tracker for monitoring revenue and analytics." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TipMinder</title>
+  <script type="text/javascript">
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var redirectRoute = params.get('p');
+      if (redirectRoute !== null) {
+        var cleanRoute = decodeURIComponent(redirectRoute);
+        window.history.replaceState(
+          null,
+          null,
+          window.location.pathname.replace(/\/$/, '') + '/' + cleanRoute + window.location.hash
+        );
+      }
+    })();
+  </script>
   <base href="<%= PUBLIC_URL %>/" />
   <link
     rel="preload"

@@ -1,4 +1,4 @@
-const BASE_SPRITE = '/assets/sprite.svg';
+const BASE_SPRITE = 'assets/sprite.svg';
 
 export const ICONS = {
   ARROW_DROPDOWN: `${BASE_SPRITE}#arrow-dropdown`,

@@ -96,6 +96,11 @@ module.exports = (env, argv) => {
             noErrorOnMissing: true,
           },
           {
+            from: path.resolve(__dirname, 'public/404.html'),
+            to: path.resolve(__dirname, 'dist/404.html'),
+            noErrorOnMissing: true,
+          },
+          {
             from: path.resolve(__dirname, 'public/robots.txt'),
             to: path.resolve(__dirname, 'dist/robots.txt'),
             noErrorOnMissing: true,
