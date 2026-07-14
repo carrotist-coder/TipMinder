@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('Inter/Inter-600.woff2') format('woff2');
+  src: url('./Inter/Inter-600.woff2') format('woff2');
 }
 
 /* Montserrat */
@@ -13,7 +13,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('Montserrat/Montserrat-500.woff2') format('woff2');
+  src: url('./Montserrat/Montserrat-500.woff2') format('woff2');
 }
 
 @font-face {
@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('Montserrat/Montserrat-600.woff2') format('woff2');
+  src: url('./Montserrat/Montserrat-600.woff2') format('woff2');
 }
 
 /* Poppins */
@@ -30,7 +30,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('Poppins/Poppins-400.woff2') format('woff2');
+  src: url('./Poppins/Poppins-400.woff2') format('woff2');
 }
 
 @font-face {
@@ -38,7 +38,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('Poppins/Poppins-500.woff2') format('woff2');
+  src: url('./Poppins/Poppins-500.woff2') format('woff2');
 }
 
 @font-face {
@@ -46,5 +46,5 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('Poppins/Poppins-600.woff2') format('woff2');
+  src: url('./Poppins/Poppins-600.woff2') format('woff2');
 }
