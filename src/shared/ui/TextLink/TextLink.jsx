@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './TextLink.module.css';
-import { ICONS } from '@shared/config/assets';
 
 export const TextLink = ({
   children,
   href,
-  iconHref = ICONS.ARROW_LINK,
+  iconHref = '',
   variant = '',
   ...props
 }) => {

@@ -1,6 +1,7 @@
 import styles from './SummaryCard.module.css';
 import { TextCard } from '@shared/ui/TextCard';
 import { TextLink } from '@shared/ui/TextLink';
+import { ICONS } from '@shared/config/assets';
 
 export const SummaryCard = ({ title, value, linkText, linkTo }) => {
   return (
@@ -9,7 +10,9 @@ export const SummaryCard = ({ title, value, linkText, linkTo }) => {
         <h4 className={styles.title}>{title}</h4>
         <p className={styles.value}>{value}</p>
       </div>
-      <TextLink to={linkTo}>{linkText}</TextLink>
+      <TextLink iconHref={ICONS.ARROW_LINK} to={linkTo}>
+        {linkText}
+      </TextLink>
     </TextCard>
   );
 };
