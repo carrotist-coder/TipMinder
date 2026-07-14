@@ -6,6 +6,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
+  const repoName = 'TipMinder';
+  const isGitHubPages =
+    isProduction && process.env.DECOY_DEST === 'github_pages';
 
   return {
     mode: isProduction ? 'production' : 'development',
@@ -15,7 +18,7 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, 'dist'),
       filename: isProduction ? 'js/[name].[contenthash:8].js' : 'js/[name].js',
       clean: true,
-      publicPath: '/',
+      publicPath: isGitHubPages ? `/${repoName}/` : '/',
     },
     resolve: {
       alias: {
@@ -72,7 +75,12 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
-      new HtmlWebpackPlugin({ template: './public/index.html' }),
+      new HtmlWebpackPlugin({
+        template: './public/index.html',
+        templateParameters: {
+          PUBLIC_URL: isGitHubPages ? `/${repoName}` : '',
+        },
+      }),
       new ESLintPlugin({ extensions: ['js', 'jsx'] }),
       new MiniCssExtractPlugin({
         filename: isProduction

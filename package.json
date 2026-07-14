@@ -4,6 +4,7 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --mode production",
+    "preview": "npm run build && serve -s dist -l 3000",
     "lint": "eslint src --ext .js,.jsx",
     "lint:fix": "eslint src --ext .js,.jsx --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
