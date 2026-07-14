@@ -1,15 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { USER_DEFAULT_IS_AUTH } from '@entities/user/model/config';
+import {
+  AUTH_STORAGE_KEY,
+  getInitialAuthState,
+} from '@entities/user/model/config';
 
 const userSlice = createSlice({
   name: 'user',
-  initialState: { isAuth: USER_DEFAULT_IS_AUTH },
+  initialState: { isAuth: getInitialAuthState() },
   reducers: {
     login: (state) => {
       state.isAuth = true;
+      sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
     },
     logout: (state) => {
       state.isAuth = false;
+      sessionStorage.setItem(AUTH_STORAGE_KEY, 'false');
     },
   },
 });
