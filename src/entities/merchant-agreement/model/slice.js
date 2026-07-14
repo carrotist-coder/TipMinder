@@ -5,12 +5,11 @@ const merchantAgreementSlice = createSlice({
   name: 'merchantAgreement',
   initialState: initMerchantAgreement(),
   reducers: {
-    updateField: (state, action) => {
-      const { field, value } = action.payload;
-      state[field] = value;
+    setAgreementData: (state, action) => {
+      return { ...state, ...action.payload };
     },
   },
 });
 
-export const { updateField } = merchantAgreementSlice.actions;
+export const { setAgreementData } = merchantAgreementSlice.actions;
 export const merchantAgreementReducer = merchantAgreementSlice.reducer;
