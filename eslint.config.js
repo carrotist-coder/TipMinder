@@ -19,9 +19,7 @@ module.exports = [
         ecmaFeatures: { jsx: true },
       },
       globals: {
-        document: 'readonly',
-        window: 'readonly',
-        console: 'readonly',
+        ...globals.browser,
       },
     },
     rules: {
