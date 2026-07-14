@@ -8,7 +8,7 @@ import { AppRoutes } from '@app/routes/AppRoutes';
 export const App = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL || '/'}>
         <Layout>
           <AppRoutes />
         </Layout>

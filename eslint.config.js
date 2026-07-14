@@ -20,6 +20,7 @@ module.exports = [
       },
       globals: {
         ...globals.browser,
+        process: 'readonly',
       },
     },
     rules: {

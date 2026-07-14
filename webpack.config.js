@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -106,6 +107,9 @@ module.exports = (env, argv) => {
             noErrorOnMissing: true,
           },
         ],
+      }),
+      new webpack.DefinePlugin({
+        'process.env.PUBLIC_URL': JSON.stringify(publicUrl),
       }),
     ],
     optimization: {
