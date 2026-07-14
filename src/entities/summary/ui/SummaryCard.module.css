@@ -1,0 +1,23 @@
+.card {
+  background-color: var(--white);
+}
+
+.title {
+  color: var(--text-card);
+  font-weight: 500;
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+}
+
+.value {
+  color: var(--black);
+  font-weight: 500;
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .value {
+    font-size: 15px;
+  }
+}

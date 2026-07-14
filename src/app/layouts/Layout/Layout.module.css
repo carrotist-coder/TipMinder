@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 72px 320px calc(72px + 32px);
+  gap: 32px;
+}
+
+@media (max-width: 1770px) {
+  .main {
+    padding: 72px 250px calc(72px + 32px);
+  }
+}
+
+@media (max-width: 1440px) {
+  .main {
+    padding: 72px 200px calc(72px + 32px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .main {
+    padding: 72px 100px calc(72px + 32px);
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 72px 70px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 72px 40px;
+    gap: 16px;
+  }
+}

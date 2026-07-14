@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-card);
+  border-radius: 5px;
+  padding: 16px 0 16px 24px;
+  gap: 12px;
+  background-color: var(--white);
+}
+
+@media (max-width: 1024px) {
+  .card {
+    padding: 14px 0 14px 14px;
+  }
+}

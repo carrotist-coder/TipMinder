@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  background-color: var(--form-bg);
+  padding: 32px;
+  border: 1px solid var(--border-form);
+  border-radius: 10px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    padding: 22px;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    gap: 12px;
+    padding: 12px;
+  }
+}

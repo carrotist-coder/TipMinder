@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-form);
+  border-radius: 10px;
+  background-color: var(--form-bg);
+}
+
+.formData {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 64px;
+  padding: 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 17px;
+  border-top: 1px solid var(--border-form);
+  padding: 32px;
+}
+
+@media (max-width: 768px) {
+  .formData {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .actions {
+    padding: 16px 32px;
+  }
+}

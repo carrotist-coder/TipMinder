@@ -1,0 +1,37 @@
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.error {
+  background-color: var(--error-bg);
+  color: var(--error-cl);
+}
+
+.active {
+  background-color: var(--active-bg);
+  color: var(--active-cl);
+}
+
+.expired {
+  background-color: var(--expired-bg);
+  color: var(--expired-cl);
+}
+
+.suspended {
+  background-color: var(--suspended-bg);
+  color: var(--suspended-cl);
+}
+
+@media (max-width: 768px) {
+  .badge {
+    font-size: 12px;
+    padding: 4px 16px;
+  }
+}

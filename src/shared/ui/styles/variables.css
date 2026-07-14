@@ -1,0 +1,39 @@
+:root {
+  /* Global */
+  --primary: #fb8f42;
+  --secondary: #ffb682;
+  --white: #ffffff;
+  --black: #474747;
+  --text: #565656;
+  --border-alt: #c0c0c0;
+  --border: #d5d5d5;
+  --border-form: #d6d6d6;
+  --border-card: #cecece;
+  --gradient: linear-gradient(-100deg, #eec595, #f1804f 52%, #edd098 100%);
+
+  /* Status Badges */
+  --error-bg: #fbecee;
+  --error-cl: #da3e52;
+  --active-bg: #ecf8f7;
+  --active-cl: #048a81;
+  --expired-bg: #f4ecfb;
+  --expired-cl: #d73eda;
+  --suspended-bg: #f3f8ec;
+  --suspended-cl: #5f8a04;
+
+  /* Tables */
+  --header-bg: #fff9f9;
+  --row-bg: var(--white);
+  --even-row-bg: #f9f9f9;
+  --columns-count: 5; /* Dynamic value */
+  --form-bg: #fafafa;
+
+  /* Error text */
+  --error-text: #dd0a29;
+
+  /* Cards */
+  --text-card: #959595;
+  --text-chart-title: #6b6b6b;
+  --text-chart: #444444;
+  --chart-dot: #5dd749;
+}

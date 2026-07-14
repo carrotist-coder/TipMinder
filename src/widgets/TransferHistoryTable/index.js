@@ -1,0 +1,1 @@
+export { TransferHistoryTable } from './TransferHistoryTable';

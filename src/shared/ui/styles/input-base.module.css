@@ -1,0 +1,52 @@
+.input,
+.select {
+  font-size: 16px;
+  padding: 15px 16px;
+  border-radius: 10px;
+  color: var(--text);
+  border: 2px solid var(--border);
+  font-family: Montserrat, sans-serif;
+  width: 100%;
+}
+
+.select {
+  appearance: none;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text);
+  width: 24px;
+  height: 24px;
+}
+
+.label,
+.errorText {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat, sans-serif;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.errorText {
+  color: var(--error-text);
+}
+
+.errorInput {
+  color: var(--error-text);
+  border-color: var(--error-cl);
+  background-color: var(--error-bg);
+}

@@ -1,0 +1,44 @@
+.logo {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon {
+  display: flex;
+  position: relative;
+  width: 22px;
+  height: 36px;
+}
+
+.oval {
+  position: absolute;
+  width: 14px;
+  height: 36px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  left: 8px;
+}
+
+.oval:first-child {
+  left: 0;
+  background-color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 14px;
+  }
+}
