@@ -15,6 +15,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  min-height: 450px;
 }
 
 .dx5c6gLl {
@@ -99,9 +100,10 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 16px;
+  min-height: 200px;
 }
 
-@media (max-width: 1770px) {
+@media (max-width: 1840px) {
   .avQsPo9a {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -116,6 +118,7 @@
 @media (max-width: 768px) {
   .avQsPo9a {
     grid-template-columns: repeat(1, 1fr);
+    min-height: 625px;
   }
 }
 
