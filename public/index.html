@@ -5,20 +5,6 @@
   <meta name="description" content="A convenient tip tracker for monitoring revenue and analytics." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TipMinder</title>
-  <script type="text/javascript">
-    (function() {
-      var params = new URLSearchParams(window.location.search);
-      var redirectRoute = params.get('p');
-      if (redirectRoute !== null) {
-        var cleanRoute = decodeURIComponent(redirectRoute);
-        window.history.replaceState(
-          null,
-          null,
-          window.location.pathname.replace(/\/$/, '') + '/' + cleanRoute + window.location.hash
-        );
-      }
-    })();
-  </script>
   <base href="<%= PUBLIC_URL %>/" />
   <link
     rel="preload"
@@ -41,6 +27,20 @@
     type="font/woff2"
     crossorigin="anonymous"
   />
+  <script type="text/javascript" defer>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var redirectRoute = params.get('p');
+      if (redirectRoute !== null) {
+        var cleanRoute = decodeURIComponent(redirectRoute);
+        window.history.replaceState(
+          null,
+          null,
+          window.location.pathname.replace(/\/$/, '') + '/' + cleanRoute + window.location.hash
+        );
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="<%= PUBLIC_URL %>/assets/fonts/fonts.css" />
 </head>
 <body>

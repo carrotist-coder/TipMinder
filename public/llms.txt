@@ -1,0 +1,10 @@
+# TipMinder
+
+> A convenient tip tracker for monitoring revenue and analytics.
+
+## Overview
+TipMinder is a web application designed for workers in the service industry to track, monitor, and analyze their tips and overall revenue. It provides clean visualization, history tracking, and analytics dashboards.
+
+## Docs
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [React Router](https://reactrouter.com/changelog/)

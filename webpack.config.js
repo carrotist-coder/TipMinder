@@ -106,6 +106,11 @@ module.exports = (env, argv) => {
             to: path.resolve(__dirname, 'dist/robots.txt'),
             noErrorOnMissing: true,
           },
+          {
+            from: path.resolve(__dirname, 'public/llms.txt'),
+            to: path.resolve(__dirname, 'dist/llms.txt'),
+            noErrorOnMissing: true,
+          },
         ],
       }),
       new webpack.DefinePlugin({
