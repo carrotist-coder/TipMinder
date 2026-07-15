@@ -41,7 +41,15 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="<%= PUBLIC_URL %>/assets/fonts/fonts.css" />
+  <link
+    rel="stylesheet"
+    href="<%= PUBLIC_URL %>/assets/fonts/fonts.css"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link rel="stylesheet" href="<%= PUBLIC_URL %>/assets/fonts/fonts.css" />
+  </noscript>
 </head>
 <body>
 <div id="root"></div>

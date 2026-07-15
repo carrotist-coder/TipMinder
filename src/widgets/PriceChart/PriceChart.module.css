@@ -3,6 +3,7 @@
   border-radius: 8px;
   border: 1px solid var(--border-card);
   background-color: var(--white);
+  min-height: 600px;
 }
 
 .header {
