@@ -2,9 +2,10 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 16px;
+  min-height: 200px;
 }
 
-@media (max-width: 1770px) {
+@media (max-width: 1840px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -19,5 +20,6 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(1, 1fr);
+    min-height: 625px;
   }
 }
